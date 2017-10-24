@@ -1,1 +1,6 @@
-first password: cisVwAWJRLtbTjGdJLYDxnlooOcT
+emh128_1 password: cisVwAWJRLtbTjGdJLYDxnlooOcT
+
+emh128_2 password: Palindrome >= 8 characters
+
+emh128_3 password:
+
