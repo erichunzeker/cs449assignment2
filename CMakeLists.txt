@@ -3,5 +3,5 @@ project(project2a)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES main.c)
+set(SOURCE_FILES mystrings.c)
 add_executable(project2a ${SOURCE_FILES})
