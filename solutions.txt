@@ -1,0 +1,19 @@
+emh128_1 password: cisVwAWJRLtbTjGdJLYDxnlooOcT
+
+emh128_2 password: Palindrome >= 8 characters
+
+set breakpoint in c
+my string is in %ebx
+calls s
+s loops string length + 1
+goes back to c
+tests to make sure %eax is >= 8
+another call to s ?
+another call to s to remove string terminator
+
+
+set breakpoint in p
+set breakpoint in s
+
+emh128_3 password:
+
