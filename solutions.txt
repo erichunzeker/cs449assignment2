@@ -1,19 +1,30 @@
 emh128_1 password: cisVwAWJRLtbTjGdJLYDxnlooOcT
 
+approach:
+
+My first thought was to use the mystrings program that I had just written. After dumping all printable strings,
+i did a keyword search on "Sorry! Not correct!". This brought me to a block that said
+
+cisVwAWJRLtbTjGdJLYDxnlooOcT
+Sorry! Not correct!
+Congratulations!
+Unlocked with passphrase %s
+
+After that, I tried the code at the top of the block, and it worked.
+
+
+
 emh128_2 password: Palindrome >= 8 characters
 
-set breakpoint in c
-my string is in %ebx
-calls s
-s loops string length + 1
-goes back to c
-tests to make sure %eax is >= 8
-another call to s ?
-another call to s to remove string terminator
+approach:
+
+First, I set a breakpoint in main. After disas, I saw that there were calls to c, p, and s from the main function.
+I set breakpoints for each function call (b c, b p, b s). I set a breakpoint in c and found that my string is in %ebx.
+Also, <s> gets called inside of c 3 times in order to check the length of the input. I knew this because s loops string
+length + 1 times. After the length is verified as over 8 in length (%eax >= 8), c gets ride of the new line terminator.
+P is called inside of c to make sure that the string is a palindrome.
 
 
-set breakpoint in p
-set breakpoint in s
 
 emh128_3 password:
 

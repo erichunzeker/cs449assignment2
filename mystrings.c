@@ -4,9 +4,9 @@
 int main(int argc, char **argv)
 {
     char *input = malloc(sizeof(char) * 100);
+    int size = 100;
     char curr;
     int len = 0;
-
 
     if(argc != 2){
         printf("Usage: %s filename", argv[0]);
@@ -19,35 +19,34 @@ int main(int argc, char **argv)
     {
         fread(&curr, sizeof(curr), 1, f);
 
-        if((curr > 31 && curr < 126 ) || curr == 9)
+        if((curr > 31 && curr <= 126 ) || curr == 9)
         {
             input[len] = curr;
 
-            if(len < sizeof(input))
+            if(len < size)
                 len++;
             else {
-                input = realloc(input, 2 * sizeof(input));
+                input = realloc(input, 2 * size);
+                size *= 2;
                 len++;
             }
-
-
         }
+
         else
         {
             input[len] = '\0';
-            if(len >= 4)
+            if(len > 3)
                 printf("%s\n", input);
             free(input);
             input = malloc(sizeof(char) * 100);
+            size = 100;
             len = 0;
+
         }
-
-
     }
 
     free(input);
     fclose(f);
     return 0;
-
 }
 
