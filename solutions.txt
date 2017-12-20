@@ -27,4 +27,4 @@ P is called inside of c to make sure that the string is a palindrome.
 
 
 emh128_3 password:
-
+ see emh128solutions.docx
